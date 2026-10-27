@@ -1,69 +1,43 @@
 import Image from "next/image";
+import { CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import CaseStudiesSection from "./components/CaseStudiesSection";
+import HeroVideo from "./components/HeroVideo";
+import QuickContactForm from "./components/QuickContactForm";
+import Reveal from "./components/Reveal";
+import ServiceFinder from "./components/ServiceFinder";
+import ServiceGrid from "./components/ServiceGrid";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+import WhatsAppWidget from "./components/WhatsAppWidget";
+import { homepageServices } from "./lib/services";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main id="top">
+      <SiteHeader />
+      <section className="hero-section" aria-labelledby="hero-title">
+        <HeroVideo />
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <h1 id="hero-title">Amazon Seller Support for Recovery, Growth, and Operations.</h1>
+            <p className="hero-tagline">From account recovery and liquidation to virtual assistants, sourcing, and business setup, Messi Groups helps Amazon sellers solve problems and move forward with confidence.</p>
+            <div className="hero-actions"><Link className="button button-primary" href="#contact-form">Get My Free Seller Assessment</Link><Link className="button button-secondary" href="#services">Explore Services</Link></div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="intro-section" id="about" aria-labelledby="intro-title"><div className="container intro-grid"><Reveal className="section-heading"><h2 id="intro-title">Complex seller problems deserve practical answers.</h2></Reveal><Reveal className="intro-copy" delay={120}><p>E-commerce is full of moving parts. Messi Groups brings the operational, financial, and marketplace support you need into one focused partnership.</p><ul className="value-list"><li><CheckCircle2 size={18} /> One focused partner across setup, protection, and scale.</li><li><CheckCircle2 size={18} /> Clear next steps when the path forward feels complicated.</li><li><CheckCircle2 size={18} /> Practical support shaped around your commercial goals.</li></ul><div className="about-detail-grid"><article><strong>Protect</strong><span>Stabilize your seller foundation.</span></article><article><strong>Build</strong><span>Set up the right business structure.</span></article><article><strong>Scale</strong><span>Grow with a clearer operating plan.</span></article></div><Link className="text-link" href="#contact">Start a conversation →</Link></Reveal></div></section>
+
+      <section className="ceo-section" aria-labelledby="ceo-title"><div className="container ceo-grid"><Reveal className="ceo-image-wrap"><div className="ceo-image-frame"><Image src="/umais-headshot.png" alt="Umais, founder of Messi Groups" fill className="ceo-image" sizes="(max-width: 800px) 90vw, 44vw" /></div></Reveal><Reveal className="ceo-copy" delay={130}><h2 id="ceo-title">Trust is built through practical results.</h2><p className="ceo-quote">“Your business deserves a partner who sees the whole picture — not just one problem at a time.”</p><p>Messi Groups helps ambitious e-commerce sellers understand the problem, organize the information, and agree the next useful action.</p><div className="ceo-principles"><article><strong>Transparency</strong><span>Clear conversations and honest next steps.</span></article><article><strong>Practical support</strong><span>Useful help shaped around the work in front of you.</span></article><article><strong>Long-term partnership</strong><span>A steady view beyond one urgent problem.</span></article></div><div className="ceo-signoff"><strong>Umais</strong><span>Founder, Messi Groups</span></div></Reveal></div></section>
+
+      <section className="services-section" id="services" aria-labelledby="services-title"><div className="container"><Reveal className="services-heading"><div className="section-heading"><h2 id="services-title">The support behind your next stage.</h2></div><p>Eight focused services to help you solve the next business problem.</p></Reveal><ServiceGrid services={homepageServices} /><div className="services-finder-link"><span>Not sure which service you need?</span><ServiceFinder triggerLabel="Find my solution" className="button button-secondary finder-button" /></div></div></section>
+
+      <CaseStudiesSection />
+
+      <section className="contact-section" id="contact" aria-labelledby="contact-title"><Reveal className="container contact-panel"><div className="contact-message"><h2 id="contact-title">Ready to solve your next business problem?</h2><p>Tell us what is blocking your business. We will help you identify the most practical next step.</p><div className="contact-journeys"><a className="button button-primary" href="#contact-form">Get My Free Seller Assessment</a><a className="button button-secondary" href="https://wa.me/923244946911" target="_blank" rel="noreferrer">Message on WhatsApp</a></div><div className="contact-quick-links"><a href="tel:+923244946911"><Phone size={16} /> Call us</a></div></div><QuickContactForm /><div className="contact-details"><div className="contact-detail"><span className="contact-icon"><MapPin size={18} /></span><div><span>Office location</span><strong>Sabzazar, Lahore, Pakistan</strong></div></div><div className="contact-detail"><span className="contact-icon"><Phone size={18} /></span><div><span>Phone / WhatsApp</span><a href="tel:+923244946911">+92 324 4946911</a></div></div><div className="contact-detail"><span className="contact-icon"><Mail size={18} /></span><div><span>Email</span><a href="mailto:messigroup67@gmail.com">messigroup67@gmail.com</a></div></div></div></Reveal></section>
+
+      <SiteFooter /><WhatsAppWidget /><Link className="mobile-fixed-cta" href="#contact-form">Get My Free Assessment</Link>
+    </main>
   );
 }
